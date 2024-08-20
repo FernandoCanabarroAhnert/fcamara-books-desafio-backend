@@ -115,6 +115,62 @@
 					</excludes>
 				</configuration>
 			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<skip>${surefire.skip}</skip>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-failsafe-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>integration-test</goal>
+							<goal>verify</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+		<configuration>
+			<excludes>
+			<exclude>com/fernandocanabarro/desafio_fcamara_books/DesafioFcamaraBooksApplication.class</exclude>
+						<exclude>com/fernandocanabarro/desafio_fcamara_books/config/**</exclude>
+						<exclude>com/fernandocanabarro/desafio_fcamara_books/entities/**</exclude>
+						<exclude>com/fernandocanabarro/desafio_fcamara_books/projections/**</exclude>
+						<exclude>com/fernandocanabarro/desafio_fcamara_books/dtos/**</exclude>
+						<exclude>com/fernandocanabarro/desafio_fcamara_books/controllers/exceptions/**</exclude>
+						<exclude>com/fernandocanabarro/desafio_fcamara_books/controllers/UserController.class</exclude>
+						<exclude>com/fernandocanabarro/desafio_fcamara_books/services/exceptions/**</exclude>
+						<exclude>com/fernandocanabarro/desafio_fcamara_books/services/validations/**</exclude>
+						<exclude>com/fernandocanabarro/desafio_fcamara_books/utils/**</exclude>
+						<exclude>com/fernandocanabarro/desafio_fcamara_books/spring_batch/**</exclude>
+			</excludes>
+		</configuration>
+		<executions>
+			<execution>
+				<goals>
+					<goal>prepare-agent</goal>
+				</goals>
+			</execution>
+			<execution>
+				<id>report</id>
+				<phase>prepare-package</phase>
+				<goals>
+					<goal>report</goal>
+				</goals>
+			</execution>
+		</executions>
+		
+		</plugin>
 		</plugins>
 	</build>
 </project>

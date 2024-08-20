@@ -20,7 +20,7 @@ public class QuartzConfig {
 
     @Bean
     public Trigger jobTrigger(){
-        String exp = "0 17 10 * * ?";
+        String exp = "0 00 14 * * ?";
         return TriggerBuilder
             .newTrigger()
             .forJob(quartzJobDetail())
