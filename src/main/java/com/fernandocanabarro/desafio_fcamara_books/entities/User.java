@@ -133,4 +133,6 @@ public class User implements UserDetails,Principal{
     public Loan findLoan(Copy copy) {
         return this.getLoans().stream().filter(x -> x.getCopy().getId().equals(copy.getId())).filter(x -> !x.getReturned()).findFirst().get();
     }
+
+    
 }
