@@ -18,6 +18,7 @@ import com.fernandocanabarro.desafio_fcamara_books.dtos.LoginResponseDTO;
 import com.fernandocanabarro.desafio_fcamara_books.dtos.NewPasswordDTO;
 import com.fernandocanabarro.desafio_fcamara_books.dtos.RegistrationRequestDTO;
 import com.fernandocanabarro.desafio_fcamara_books.dtos.UserDTO;
+import com.fernandocanabarro.desafio_fcamara_books.openapi.UserControllerOpenAPI;
 import com.fernandocanabarro.desafio_fcamara_books.services.UserService;
 
 import jakarta.validation.Valid;
@@ -26,7 +27,7 @@ import lombok.RequiredArgsConstructor;
 @RestController
 @RequestMapping("/users")
 @RequiredArgsConstructor
-public class UserController {
+public class UserController implements UserControllerOpenAPI{
 
     private final UserService userService;
 

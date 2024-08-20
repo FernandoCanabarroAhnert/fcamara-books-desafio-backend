@@ -16,6 +16,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.fernandocanabarro.desafio_fcamara_books.dtos.AuthorDTO;
 import com.fernandocanabarro.desafio_fcamara_books.dtos.BookMinDTO;
+import com.fernandocanabarro.desafio_fcamara_books.openapi.AuthorControllerOpenAPI;
 import com.fernandocanabarro.desafio_fcamara_books.services.AuthorService;
 import com.fernandocanabarro.desafio_fcamara_books.services.BookService;
 
@@ -25,7 +26,7 @@ import lombok.RequiredArgsConstructor;
 @RestController
 @RequestMapping("/authors")
 @RequiredArgsConstructor
-public class AuthorController {
+public class AuthorController implements AuthorControllerOpenAPI{
 
     private final BookService bookService;
     private final AuthorService authorService;

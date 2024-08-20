@@ -15,6 +15,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.fernandocanabarro.desafio_fcamara_books.dtos.CopyMinResponseDTO;
 import com.fernandocanabarro.desafio_fcamara_books.dtos.CopyRequestDTO;
+import com.fernandocanabarro.desafio_fcamara_books.openapi.CopyControllerOpenAPI;
 import com.fernandocanabarro.desafio_fcamara_books.services.CopyService;
 
 import jakarta.validation.Valid;
@@ -23,7 +24,7 @@ import lombok.RequiredArgsConstructor;
 @RestController
 @RequestMapping("/copies")
 @RequiredArgsConstructor
-public class CopyController {
+public class CopyController implements CopyControllerOpenAPI{
 
     private final CopyService copyService;
 

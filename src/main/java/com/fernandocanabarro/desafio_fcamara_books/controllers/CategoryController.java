@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.fernandocanabarro.desafio_fcamara_books.dtos.BookMinDTO;
 import com.fernandocanabarro.desafio_fcamara_books.dtos.CategoryDTO;
+import com.fernandocanabarro.desafio_fcamara_books.openapi.CategoryControllerOpenAPI;
 import com.fernandocanabarro.desafio_fcamara_books.services.BookService;
 import com.fernandocanabarro.desafio_fcamara_books.services.CategoryService;
 
@@ -18,7 +19,7 @@ import lombok.RequiredArgsConstructor;
 @RestController
 @RequestMapping("/categories")
 @RequiredArgsConstructor
-public class CategoryController {
+public class CategoryController implements CategoryControllerOpenAPI{
 
     private final BookService bookService;
     private final CategoryService categoryService;

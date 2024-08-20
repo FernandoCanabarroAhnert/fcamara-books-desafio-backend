@@ -19,6 +19,7 @@ import com.fernandocanabarro.desafio_fcamara_books.dtos.LoanRequestDTO;
 import com.fernandocanabarro.desafio_fcamara_books.dtos.LoanResponseDTO;
 import com.fernandocanabarro.desafio_fcamara_books.dtos.LoanReturnResponseDTO;
 import com.fernandocanabarro.desafio_fcamara_books.dtos.MyLoansDTO;
+import com.fernandocanabarro.desafio_fcamara_books.openapi.LoanControllerOpenAPI;
 import com.fernandocanabarro.desafio_fcamara_books.services.LoanService;
 
 import jakarta.validation.Valid;
@@ -27,7 +28,7 @@ import lombok.RequiredArgsConstructor;
 @RestController
 @RequestMapping("/loans")
 @RequiredArgsConstructor
-public class LoanController {
+public class LoanController implements LoanControllerOpenAPI{
 
     private final LoanService loanService;
 
