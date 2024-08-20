@@ -2,6 +2,8 @@ package com.fernandocanabarro.desafio_fcamara_books.dtos;
 
 import org.hibernate.validator.constraints.br.CPF;
 
+import com.fernandocanabarro.desafio_fcamara_books.services.validations.RegistrationRequestDTOValid;
+
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
@@ -14,6 +16,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@RegistrationRequestDTOValid
 public class RegistrationRequestDTO {
 
     @NotBlank(message = "Campo Requerido")
