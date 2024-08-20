@@ -210,8 +210,8 @@ INSERT INTO copies (available, book_id) VALUES (true, 36);
 INSERT INTO addresses (bairro, cep, complemento, logradouro, numero, cidade, estado) VALUES ('Centro', '01001-000', 'Apt 101', 'Rua A', '123','Porto Alegre','RS');
 INSERT INTO addresses (bairro, cep, complemento, logradouro, numero, cidade, estado) VALUES ('Vila Nova', '02002-000', 'Casa', 'Avenida B', '456','Porto Alegre','RS');
 
-INSERT INTO users (birth_date, late_return, address_id, cpf, email, full_name, password) VALUES ('1990-05-15', 0, 1, '12345678901', 'alex@gmail.com', 'Alex Green', '$2a$10$iZJwrJbGrLiByGwD/eiE0u/SPiICKFbVmTLTfVfM34duTf7zU/C/m');
-INSERT INTO users (birth_date, late_return, address_id, cpf, email, full_name, password) VALUES ('1985-08-20', 1, 2, '98765432100', 'ana@gmail.com', 'Ana Brown', '$2a$10$iZJwrJbGrLiByGwD/eiE0u/SPiICKFbVmTLTfVfM34duTf7zU/C/m');
+INSERT INTO users (birth_date, late_return, address_id, cpf, email, full_name, password, activated) VALUES ('1990-05-15', 0, 1, '066.433.542-00', 'alex@gmail.com', 'Alex Green', '$2a$10$iZJwrJbGrLiByGwD/eiE0u/SPiICKFbVmTLTfVfM34duTf7zU/C/m',TRUE);
+INSERT INTO users (birth_date, late_return, address_id, cpf, email, full_name, password, activated) VALUES ('1985-08-20', 1, 2, '98765432100', 'ana@gmail.com', 'Ana Brown', '$2a$10$iZJwrJbGrLiByGwD/eiE0u/SPiICKFbVmTLTfVfM34duTf7zU/C/m',TRUE);
 
 INSERT INTO roles (authority) VALUES ('ROLE_ADMIN');
 INSERT INTO roles (authority) VALUES ('ROLE_USER');
@@ -220,8 +220,8 @@ INSERT INTO user_role (role_id, user_id) VALUES (1, 1);
 INSERT INTO user_role (role_id, user_id) VALUES (2, 1);  
 INSERT INTO user_role (role_id, user_id) VALUES (2, 2);
 
-INSERT INTO loans (date_to_return, loan_date, returned, returned_at, copy_id, user_id) VALUES ('2024-09-01', '2024-08-01', TRUE, '2024-08-29', 1, 1);
-INSERT INTO loans (date_to_return, loan_date, returned, returned_at, copy_id, user_id) VALUES ('2024-09-02', '2024-08-02', TRUE, '2024-08-30', 2, 2);
+INSERT INTO loans (date_to_return, loan_date, returned, returned_at, copy_id, user_id) VALUES ('2024-08-18', '2024-08-01', TRUE, '2024-08-29', 1, 1);
+INSERT INTO loans (date_to_return, loan_date, returned, returned_at, copy_id, user_id) VALUES ('2024-08-18', '2024-08-02', FALSE, '2024-08-30', 2, 2);
 INSERT INTO loans (date_to_return, loan_date, returned, returned_at, copy_id, user_id) VALUES ('2024-09-03', '2024-08-03', TRUE, '2024-08-31', 3, 1);
 INSERT INTO loans (date_to_return, loan_date, returned, returned_at, copy_id, user_id) VALUES ('2024-09-04', '2024-08-04', TRUE, '2024-09-02', 4, 2);
 INSERT INTO loans (date_to_return, loan_date, returned, returned_at, copy_id, user_id) VALUES ('2024-09-05', '2024-08-05', TRUE, '2024-09-03', 5, 1);
@@ -250,4 +250,5 @@ INSERT INTO loans (date_to_return, loan_date, returned, returned_at, copy_id, us
 INSERT INTO loans (date_to_return, loan_date, returned, returned_at, copy_id, user_id) VALUES ('2024-09-28', '2024-08-28', FALSE, NULL, 28, 2);
 INSERT INTO loans (date_to_return, loan_date, returned, returned_at, copy_id, user_id) VALUES ('2024-09-29', '2024-08-29', TRUE, '2024-09-27', 29, 1);
 INSERT INTO loans (date_to_return, loan_date, returned, returned_at, copy_id, user_id) VALUES ('2024-09-30', '2024-08-30', TRUE, '2024-09-28', 30, 2);
+INSERT INTO loans (date_to_return, loan_date, returned, returned_at, copy_id, user_id) VALUES ('2024-08-18', '2024-08-01', FALSE, '2024-08-29', 1, 1);
 

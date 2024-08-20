@@ -18,7 +18,7 @@ public interface CopyRepository extends JpaRepository<Copy,Long>{
         FROM copies AS c
         INNER JOIN books AS b ON c.book_id = b.id
         INNER JOIN authors AS a ON b.author_id = a.id
-        WHERE c.available = 1
+        WHERE c.available = true
             """)
     Page<CopyProjection> findAllCopiesAvailable(Pageable pageable);
 }
