@@ -53,6 +53,7 @@ public class LoanService {
         user.addLoan(loan);
         userRepository.save(user);
         copy.addLoan(loan);
+        copy.setAvailable(false);
         copyRepository.save(copy);
         return new LoanResponseDTO(loan);
     }
